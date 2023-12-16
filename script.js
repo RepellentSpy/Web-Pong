@@ -12,14 +12,14 @@ let ballX = gameContainer.offsetWidth / 2;
 let ballY = gameContainer.offsetHeight / 2;
 
 // Set the initial speed of the ball
-let ballSpeedX = 1;
-let ballSpeedY = 1;
+let ballSpeedX = 2;
+let ballSpeedY = 2;
 
 // Set the initial position of the paddles
 let paddle1Y = gameContainer.offsetHeight / 2 - paddle1.offsetHeight / 2;
 let paddle2Y = gameContainer.offsetHeight / 2 - paddle2.offsetHeight / 2;
 
-// Set the score
+// Set the initial score
 let score1 = 0;
 let score2 = 0;
 
@@ -41,7 +41,7 @@ function gameLoop() {
   ballY += ballSpeedY;
 
   // Check if the ball has hit the top or bottom of the game container
-  if (ballY < 0 || ballY > gameContainer.offsetHeight) {
+  if (ballY < 0 || ballY > gameContainer.offsetHeight - 15) {
     ballSpeedY *= -1;
   }
 
@@ -57,12 +57,14 @@ function gameLoop() {
   // Check if the ball has gone off the left or right side of the game container
   if (ballX < 0) {
     score2++;
+    document.getElementById("score_player2").innerHTML = score2;
     ballX = gameContainer.offsetWidth / 2;
     ballY = gameContainer.offsetHeight / 2;
     ballSpeedX *= -1;
   }
 
   if (ballX > gameContainer.offsetWidth) {
+    document.getElementById("score_player1").innerHTML = score2;
     score1++;
     ballX = gameContainer.offsetWidth / 2;
     ballY = gameContainer.offsetHeight / 2;
@@ -80,4 +82,5 @@ function gameLoop() {
 function startGame() {
   gameLoop();
   console.log("Game started")
+  document.getElementById("start_game_button").innerHTML = "Make the ball faster"
 }
