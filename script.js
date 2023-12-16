@@ -23,7 +23,7 @@ let paddle2Y = gameContainer.offsetHeight / 2 - paddle2.offsetHeight / 2;
 let score1 = 0;
 let score2 = 0;
 
-// Add event listeners to the paddles
+// Move the paddles
 paddle1.addEventListener("mousemove", (e) => {
   paddle1Y = e.clientY - paddle1.offsetHeight / 2;
   paddle1.style.top = paddle1Y + "px";
