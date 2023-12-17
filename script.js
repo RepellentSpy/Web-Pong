@@ -25,12 +25,12 @@ let score2 = 0;
 
 // Add event listeners to the paddles
 paddle1.addEventListener("mousemove", (e) => {
-  paddle1Y = e.clientY - paddle1.offsetHeight / 2;
+  paddle1Y = Math.min(e.clientY - paddle1.offsetHeight / 2, 500);
   paddle1.style.top = paddle1Y + "px";
 });
 
 paddle2.addEventListener("mousemove", (e) => {
-  paddle2Y = e.clientY - paddle2.offsetHeight / 2;
+  paddle2Y = Math.min(e.clientY - paddle2.offsetHeight / 2, 500);
   paddle2.style.top = paddle2Y + "px";
 });
 
