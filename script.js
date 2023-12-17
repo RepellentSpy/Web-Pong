@@ -57,15 +57,25 @@ function gameLoop() {
   // Check if the ball has gone off the left or right side of the game container
   if (ballX < 0) {
     score2++;
+    document.getElementById("score_player2").style.animation = "0.5s number_change_player2 forwards";
     document.getElementById("score_player2").innerHTML = score2;
+    setTimeout(() => {
+      document.getElementById("score_player2").style.animation = "";
+    }, 600);
+
     ballX = gameContainer.offsetWidth / 2;
     ballY = gameContainer.offsetHeight / 2;
     ballSpeedX *= -1;
   }
 
   if (ballX > gameContainer.offsetWidth) {
-    document.getElementById("score_player1").innerHTML = score2;
     score1++;
+    document.getElementById("score_player1").style.animation = "0.5s number_change_player1 forwards";
+    document.getElementById("score_player1").innerHTML = score1;
+    setTimeout(() => {
+      document.getElementById("score_player1").style.animation = "";
+    }, 600);
+
     ballX = gameContainer.offsetWidth / 2;
     ballY = gameContainer.offsetHeight / 2;
     ballSpeedX *= -1;
@@ -81,6 +91,15 @@ function gameLoop() {
 
 function startGame() {
   gameLoop();
-  console.log("Game started")
-  document.getElementById("start_game_button").innerHTML = "Make the ball faster"
+  console.log("Game started");
+  setTimeout(() => {
+    document.getElementById("start_game_button").innerHTML = "Speed the ball up";
+  }, 200);
+}
+
+function buttonClicked() {
+  let button_clicked = true;
+  if (button_clicked == true) {
+    document.getElementById("start_game_button").style.animation = "0.5s button_click_reverse forwards";
+  }
 }

@@ -4,6 +4,8 @@
 
 #main_title {
     font-family: "Roboto Mono";
+    margin-left: 52rem;
+    margin-top: -37rem;
 }
 
 /* Game container */
@@ -53,13 +55,13 @@
   }
 
   button {
-    margin-top: 1rem;
     font-family: "Roboto Mono", Sans-serif;
     padding: 0.5rem;
     border-color: transparent;
     border-width: 0;
     background-color: white;
-    box-shadow: 0 0 1rem #00000038;
+    box-shadow: 0 0 1rem #0000000f;
+    margin-left: 52rem;
 }
 
   button:active {
@@ -71,10 +73,20 @@
       to {scale: 0.8; background-color: black; color: white;}
   }
 
-  @keyframes number_change {
-      from {opacity: 0; margin-top: -0.2rem;}
+  @keyframes button_click_reverse {
+    from {scale: 0.8; background-color: black; color: white; width: 96px; height: 34px;}
+    to {scale: 1; background-color: white; color: black; width: 200px; height: 34px;}
+}
+
+  @keyframes number_change_player2 {
+      from {opacity: 0; transform: translateY(396px);}
       to {opacity: 1;}
   }
+
+  @keyframes number_change_player1 {
+    from {opacity: 0; transform: translate(35px, 481px);}
+    to {opacity: 1; transform: translate(35px, 493px);}
+}
 
   #score_player1 {
     color: white;
