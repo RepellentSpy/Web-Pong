@@ -36,9 +36,13 @@ paddle2.addEventListener("mousemove", (e) => {
 
 // Update the game loop
 function gameLoop() {
+  document.getElementById("ball").style.animation = "1s ball_zoom forwards"; // ball animation
   // Move the ball
-  ballX += ballSpeedX;
-  ballY += ballSpeedY;
+  setTimeout(() => {
+    ballX += ballSpeedX;
+    ballY += ballSpeedY;
+  }, 1200);
+  
 
   // Check if the ball has hit the top or bottom of the game container
   if (ballY < 0 || ballY > gameContainer.offsetHeight - 15) {
@@ -47,16 +51,20 @@ function gameLoop() {
 
   // Check if the ball has hit a paddle
   if (ballX < paddle1_hitbox.offsetLeft + paddle1_hitbox.offsetWidth && ballY > paddle1Y && ballY < paddle1Y + paddle1_hitbox.offsetHeight) {
-    ballSpeedX *= -1;
+    ballSpeedX *= -1.05; // Reverse direction and add a bit of speed
   }
 
   if (ballX > 760 && ballY > paddle2Y && ballY < paddle2Y + paddle2_hitbox.offsetHeight) {
-    ballSpeedX *= -1;
+    ballSpeedX *= -1.05; // Reverse direction and add a bit of speed
   }
 
   // Check if the ball has gone off the left or right side of the game container
   if (ballX < 0) {
     score2++;
+    document.getElementById("game-container").style.animation = "0.2s shake forwards" // box shakes
+    setTimeout(() => {
+      document.getElementById("game-container").style.animation = ""
+    }, 210);
     document.getElementById("score_player2").style.animation = "0.5s number_change_player2 forwards";
     document.getElementById("score_player2").innerHTML = score2;
     setTimeout(() => {
@@ -65,11 +73,16 @@ function gameLoop() {
 
     ballX = gameContainer.offsetWidth / 2;
     ballY = gameContainer.offsetHeight / 2;
+    ballSpeedX = -2;
     ballSpeedX *= -1;
   }
 
   if (ballX > gameContainer.offsetWidth) {
     score1++;
+    document.getElementById("game-container").style.animation = "0.2s shake forwards" // box shakes
+    setTimeout(() => {
+      document.getElementById("game-container").style.animation = ""
+    }, 210);
     document.getElementById("score_player1").style.animation = "0.5s number_change_player1 forwards";
     document.getElementById("score_player1").innerHTML = score1;
     setTimeout(() => {
@@ -78,6 +91,7 @@ function gameLoop() {
 
     ballX = gameContainer.offsetWidth / 2;
     ballY = gameContainer.offsetHeight / 2;
+    ballSpeedX = 2;
     ballSpeedX *= -1;
   }
 
@@ -89,15 +103,28 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
-function startGame() {
-  gameLoop();
-  console.log("Game started");
-  setTimeout(() => {
+function startGame() { // Starts the game
+  setTimeout(() => { // Changes the start game button to speed the ball up
     document.getElementById("start_game_button").innerHTML = "Speed the ball up";
   }, 200);
+  document.getElementById("start_game_text").style.visibility = "visible"; // sets start game text to visible
+  document.getElementById("start_game_text").style.animation = "1s game_start forwards"; // adds blinking animation
+  setTimeout(() => {
+    document.getElementById("start_game_text").style.visibility = "hidden"; // hides the text again
+  }, 1100);
+  
+  setTimeout(() => { // Actually starts the game
+    gameLoop();
+    document.getElementById("ball").style.visibility = "visible";
+    console.log("Game started");
+  }, 1000);
+
+  // Sets default paddle positions
+  document.getElementById("paddle1_box").style.top = "0px";
+  document.getElementById("paddle2_box").style.top = "0px";
 }
 
-function buttonClicked() {
+function buttonClicked() { // Handles animation when the start game button is clicked
   let button_clicked = true;
   if (button_clicked == true) {
     document.getElementById("start_game_button").style.animation = "0.5s button_click_reverse forwards";

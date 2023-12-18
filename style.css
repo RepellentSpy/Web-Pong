@@ -39,6 +39,7 @@
     height: 10px;
     background-color: white;
     position: absolute;
+    visibility: hidden;
   }
 
   #paddle1_box {
@@ -76,7 +77,7 @@
   @keyframes button_click_reverse {
     from {scale: 0.8; background-color: black; color: white; width: 96px; height: 34px;}
     to {scale: 1; background-color: white; color: black; width: 200px; height: 34px;}
-}
+  }
 
   @keyframes number_change_player2 {
       from {opacity: 0; transform: translateY(396px);}
@@ -86,7 +87,35 @@
   @keyframes number_change_player1 {
     from {opacity: 0; transform: translate(35px, 481px);}
     to {opacity: 1; transform: translate(35px, 493px);}
-}
+  }
+
+  @keyframes game_start {
+    0% {transform: translateY(20px); opacity: 0;}
+    20% {transform: translateY(0px); opacity: 1;}
+    30% {opacity: 0;}
+    40% {opacity: 1;}
+    50% {opacity: 0;}
+    60% {opacity: 1;}
+    70% {opacity: 0;}
+    80% {opacity: 1;}
+    90% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  @keyframes ball_zoom {
+    from {scale: 4; opacity: 0;}
+    to {scale: 1; opacity: 1;}
+  }
+
+  @keyframes ball_hit {
+    from {width: 20px;}
+    to {width: 10px;}
+  }
+
+  @keyframes shake {
+    from {scale: 1.0025;}
+    to {scale: 1;}
+  }
 
   #score_player1 {
     color: white;
@@ -101,4 +130,12 @@
     margin-left: 45rem;
     transform: translateY(408px);
     font-size: 2.5rem;
+  }
+
+  #start_game_text {
+    position: absolute;
+    color: white;
+    font-family: "Silkscreen";
+    margin-left: 270px;
+    visibility: hidden;
   }
