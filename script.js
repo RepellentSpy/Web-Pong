@@ -1,19 +1,24 @@
 const gameContainer = document.getElementById("game-container"); // Define game container
+
+// paddles
 const paddle1 = document.getElementById("paddle1_box"); // define paddle1 box
 const paddle2 = document.getElementById("paddle2_box"); // define paddle2 box
-
 const paddle1_hitbox = document.getElementById("paddle1"); // define paddle 1 hitbox
 const paddle2_hitbox = document.getElementById("paddle2"); // define paddle 2 hitbox
 
 const ball = document.getElementById("ball"); // define ball
+
+// Definitions ↑↑↑
+// -----------------------------------------------------------------------------------
+// Game logic ↓↓↓
 
 // Set the initial position of the ball
 let ballX = gameContainer.offsetWidth / 2;
 let ballY = gameContainer.offsetHeight / 2;
 
 // Set the initial speed of the ball
-let ballSpeedX = 2;
-let ballSpeedY = 2;
+let ballSpeedX = 3;
+let ballSpeedY = 3;
 
 // Set the initial position of the paddles
 let paddle1Y = gameContainer.offsetHeight / 2 - paddle1.offsetHeight / 2;
@@ -103,6 +108,10 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
+// Game logic ↑↑↑
+// ----------------------------------------------------------------------------
+// Beginning of the game ↓↓↓
+
 function startGame() { // Starts the game
   setTimeout(() => { // Changes the start game button to speed the ball up
     document.getElementById("start_game_button").innerHTML = "Speed the ball up";
@@ -131,13 +140,17 @@ function buttonClicked() { // Handles animation when the start game button is cl
   }
 }
 
-function toggleDarkMode() { // To-Do: make this a toggle
+// Beginning of the game ↑↑↑
+// ----------------------------------------------------------------------------
+// Misc ↓↓↓ 
+
+function toggleDarkMode() { // To-Do: make this a toggle, add cookies to remember preference
   document.body.style.animation = "1.2s dark_mode_change forwards";
   document.body.style.backgroundImage = "url(images/Blueprint_black.svg)";
   document.body.style.backgroundColor = "black";
   document.body.style.color = "white";
 
-  document.getElementById("start_game_button").style.backgroundColor = "#141414";
+  document.getElementById("start_game_button", "dark_mode_button").style.backgroundColor = "#141414";
   document.getElementById("start_game_button").style.color = "white";
 
   document.getElementById("dark_mode_button").style.backgroundColor = "#141414";
