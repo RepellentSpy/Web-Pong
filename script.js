@@ -23,9 +23,9 @@ let paddle2Y = gameContainer.offsetHeight / 2 - paddle2.offsetHeight / 2;
 let score1 = 0;
 let score2 = 0;
 
-// Add event listeners to the paddles
+// Add event listeners to the paddles that allow the paddles to move with mouse
 paddle1.addEventListener("mousemove", (e) => {
-  paddle1Y = Math.min(e.clientY - paddle1.offsetHeight / 2, 500);
+  paddle1Y = Math.min(e.clientY - paddle1.offsetHeight / 2, 500); // minimum makes sure the paddle doesn't leave the gamebox
   paddle1.style.top = paddle1Y + "px";
 });
 
@@ -36,9 +36,9 @@ paddle2.addEventListener("mousemove", (e) => {
 
 // Update the game loop
 function gameLoop() {
-  document.getElementById("ball").style.animation = "1s ball_zoom forwards"; // ball animation
-  // Move the ball
-  setTimeout(() => {
+  document.getElementById("ball").style.animation = "1s ball_zoom forwards"; // ball animation when ball spawns
+  // Launch the ball
+  setTimeout(() => { // waits 1200ms before launching the ball
     ballX += ballSpeedX;
     ballY += ballSpeedY;
   }, 1200);
@@ -46,7 +46,7 @@ function gameLoop() {
 
   // Check if the ball has hit the top or bottom of the game container
   if (ballY < 0 || ballY > gameContainer.offsetHeight - 15) {
-    ballSpeedY *= -1;
+    ballSpeedY *= -1; // change direction
   }
 
   // Check if the ball has hit a paddle
@@ -60,21 +60,21 @@ function gameLoop() {
 
   // Check if the ball has gone off the left or right side of the game container
   if (ballX < 0) {
-    score2++;
+    score2++; //add to player 2's score
     document.getElementById("game-container").style.animation = "0.2s shake forwards" // box shakes
     setTimeout(() => {
       document.getElementById("game-container").style.animation = ""
     }, 210);
     document.getElementById("score_player2").style.animation = "0.5s number_change_player2 forwards";
-    document.getElementById("score_player2").innerHTML = score2;
+    document.getElementById("score_player2").innerHTML = score2; // changes the score text
     setTimeout(() => {
       document.getElementById("score_player2").style.animation = "";
     }, 600);
 
-    ballX = gameContainer.offsetWidth / 2;
-    ballY = gameContainer.offsetHeight / 2;
+    ballX = gameContainer.offsetWidth / 2; // reset ball to default coords
+    ballY = gameContainer.offsetHeight / 2; // reset ball to default coords
     ballSpeedX = -2;
-    ballSpeedX *= -1;
+    ballSpeedX *= -1; // change ball direction
   }
 
   if (ballX > gameContainer.offsetWidth) {
@@ -84,15 +84,15 @@ function gameLoop() {
       document.getElementById("game-container").style.animation = ""
     }, 210);
     document.getElementById("score_player1").style.animation = "0.5s number_change_player1 forwards";
-    document.getElementById("score_player1").innerHTML = score1;
+    document.getElementById("score_player1").innerHTML = score1; // change the score text
     setTimeout(() => {
       document.getElementById("score_player1").style.animation = "";
     }, 600);
 
-    ballX = gameContainer.offsetWidth / 2;
-    ballY = gameContainer.offsetHeight / 2;
+    ballX = gameContainer.offsetWidth / 2; // reset ball to default coords
+    ballY = gameContainer.offsetHeight / 2; // reset ball to default coords
     ballSpeedX = 2;
-    ballSpeedX *= -1;
+    ballSpeedX *= -1; // reverse the ball
   }
 
   // Update the position of the ball
@@ -129,4 +129,17 @@ function buttonClicked() { // Handles animation when the start game button is cl
   if (button_clicked == true) {
     document.getElementById("start_game_button").style.animation = "0.5s button_click_reverse forwards";
   }
+}
+
+function toggleDarkMode() { // To-Do: make this a toggle
+  document.body.style.animation = "1.2s dark_mode_change forwards";
+  document.body.style.backgroundImage = "url(images/Blueprint_black.svg)";
+  document.body.style.backgroundColor = "black";
+  document.body.style.color = "white";
+
+  document.getElementById("start_game_button").style.backgroundColor = "#141414";
+  document.getElementById("start_game_button").style.color = "white";
+
+  document.getElementById("dark_mode_button").style.backgroundColor = "#141414";
+  document.getElementById("dark_mode_button").style.color = "white";
 }
