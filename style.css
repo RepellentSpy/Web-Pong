@@ -127,6 +127,11 @@ body {
     to {background-image: url(images/Blueprint_black.svg); color: white; background-color: black;}
   }
 
+  @keyframes dark_mode_change_buttons {
+    from {background-color: white;}
+    to {background-color: #141414; color: white;}
+  }
+
   #score_player1 {
     color: white;
     font-family: "Silkscreen";

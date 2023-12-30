@@ -136,14 +136,12 @@ function startGame() { // Starts the game
 // Misc ↓↓↓ 
 
 function toggleDarkMode() { // To-Do: make this a toggle, add cookies to remember preference
-  document.body.style.animation = "1.2s dark_mode_change forwards";
-  document.body.style.backgroundImage = "url(images/Blueprint_black.svg)";
-  document.body.style.backgroundColor = "black";
-  document.body.style.color = "white";
+  setTimeout(() => {
+    document.body.style.animation = "1.2s dark_mode_change forwards";
+    document.body.style.backgroundColor = "black";
+    document.body.style.color = "white";
 
-  document.getElementById("start_game_button", "dark_mode_button").style.backgroundColor = "#141414";
-  document.getElementById("start_game_button").style.color = "white";
-
-  document.getElementById("dark_mode_button").style.backgroundColor = "#141414";
-  document.getElementById("dark_mode_button").style.color = "white";
+    document.getElementById("start_game_button").style.animation = "1.2s dark_mode_change_buttons forwards";
+    document.getElementById("dark_mode_button").style.animation = "1.2s dark_mode_change_buttons forwards";
+  }, 200);
 }
