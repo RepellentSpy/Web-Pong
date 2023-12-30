@@ -67,6 +67,7 @@ body {
     background-color: white;
     box-shadow: 0 0 1rem #0000000f;
     margin-left: 52rem;
+    animation: 0.2s button_click_reverse forwards;
 }
 
   button:active {
@@ -79,8 +80,8 @@ body {
   }
 
   @keyframes button_click_reverse {
-    from {scale: 0.8; background-color: black; color: white; width: 96px; height: 34px;}
-    to {scale: 1; background-color: white; color: black; width: 200px; height: 34px;}
+    from {scale: 0.8; background-color: black; color: white;}
+    to {scale: 1;}
   }
 
   @keyframes number_change_player2 {
@@ -147,4 +148,8 @@ body {
     font-family: "Silkscreen";
     margin-left: 270px;
     visibility: hidden;
+  }
+
+  #start_game_button {
+    margin-bottom: 0.5rem;
   }

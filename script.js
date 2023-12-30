@@ -113,9 +113,7 @@ function gameLoop() {
 // Beginning of the game ↓↓↓
 
 function startGame() { // Starts the game
-  setTimeout(() => { // Changes the start game button to speed the ball up
-    document.getElementById("start_game_button").innerHTML = "Speed the ball up";
-  }, 200);
+  document.getElementById("start_game_button").disabled = true;
   document.getElementById("start_game_text").style.visibility = "visible"; // sets start game text to visible
   document.getElementById("start_game_text").style.animation = "1s game_start forwards"; // adds blinking animation
   setTimeout(() => {
@@ -131,13 +129,6 @@ function startGame() { // Starts the game
   // Sets default paddle positions
   document.getElementById("paddle1_box").style.top = "0px";
   document.getElementById("paddle2_box").style.top = "0px";
-}
-
-function buttonClicked() { // Handles animation when the start game button is clicked
-  let button_clicked = true;
-  if (button_clicked == true) {
-    document.getElementById("start_game_button").style.animation = "0.5s button_click_reverse forwards";
-  }
 }
 
 // Beginning of the game ↑↑↑
