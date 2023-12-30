@@ -158,3 +158,18 @@ body {
   #start_game_button {
     margin-bottom: 0.5rem;
   }
+
+  #back_button {
+    margin-top: 29rem;
+    font-family: "Roboto Mono", sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  #labs_icon {
+    width: 1.2rem;
+    margin-bottom: -0.2rem;
+    margin-right: 0.5rem;
+  }
