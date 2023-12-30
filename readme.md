@@ -1,4 +1,4 @@
-<img src="images/banner.png">
+<img src="images/banner_smol.png">
 <h1>Web-Pong</h1>
 <p>A simple game of Pong for the internet. Entirely playable within a web browser that supports JavaScript.</p>
 
