@@ -4,6 +4,7 @@
 
 body {
   user-select: none;
+  
 }
 
 #main_title {
@@ -160,8 +161,13 @@ body {
   }
 
   #back_button {
-    margin-top: 29rem;
+    position: absolute;
     font-family: "Roboto Mono", sans-serif;
+    transform: translateY(30rem);
+  }
+
+  #dark_mode_button {
+    margin-left: 0;
   }
 
   a {
