@@ -140,6 +140,8 @@ function toggleDarkMode() { // To-Do: make this a toggle, add cookies to remembe
     document.body.style.animation = "1.2s dark_mode_change forwards";
     document.body.style.backgroundColor = "black";
     document.body.style.color = "white";
+    document.getElementById("labs_icon").src = "images/experiment_tube_white.svg";
+    document.getElementById("back_text").style.color = "#8d8df1";
 
     document.getElementById("start_game_button").style.animation = "1.2s dark_mode_change_buttons forwards";
     document.getElementById("dark_mode_button").style.animation = "1.2s dark_mode_change_buttons forwards";
