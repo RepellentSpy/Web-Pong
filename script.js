@@ -191,3 +191,9 @@ function loadingEnd() {
     loading_screen.remove();
   }, 505);
 }
+
+function speedInput() {
+  speed = document.getElementById("speed_input").value;
+  document.getElementById("speed_text").innerHTML = speed;
+  ballSpeedX = parseInt(speed);
+}

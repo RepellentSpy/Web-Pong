@@ -251,3 +251,15 @@ body {
     from {opacity: 1;}
     to {opacity: 0;}
   }
+
+  #speed_segment {
+    margin-left: 52rem;
+  }
+
+  #speed_segment_title {
+    font-family: "Roboto Mono", sans-serif;
+  }
+
+  #speed_text {
+    font-family: "Roboto Mono", sans-serif;
+  }
