@@ -68,7 +68,7 @@ body {
     border-color: transparent;
     border-width: 0;
     background-color: white;
-    box-shadow: 0 0 1rem #0000000f;
+    box-shadow: 0 0 1rem #00000007;
     margin-left: 52rem;
     animation: 0.2s button_click_reverse forwards;
 }

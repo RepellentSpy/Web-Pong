@@ -163,7 +163,6 @@ function roundBall() {
   // Change highlighted button
   document.getElementById("square_ball_button").style.borderWidth = "0px";
   document.getElementById("square_ball_button").style.borderColor = "transparent";
-  
   document.getElementById("round_ball_button").style.borderWidth = "2px";
   document.getElementById("round_ball_button").style.borderColor = "black";
 
@@ -177,7 +176,6 @@ function squareBall() {
   // Change highlighted button
   document.getElementById("round_ball_button").style.borderWidth = "0px";
   document.getElementById("round_ball_button").style.borderColor = "transparent";
-  
   document.getElementById("square_ball_button").style.borderWidth = "2px";
   document.getElementById("square_ball_button").style.borderColor = "black";
 
