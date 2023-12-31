@@ -12,7 +12,7 @@ const paddle2_hitbox = document.getElementById("paddle2"); // define paddle 2 hi
 
 const ball = document.getElementById("ball"); // define ball
 
-// Definitions ↑↑↑
+// Definitions & loading screen ↑↑↑
 // -----------------------------------------------------------------------------------
 // Game logic ↓↓↓
 
