@@ -1,3 +1,7 @@
+setTimeout(() => {
+  loadingEnd();
+}, 1000);
+
 const gameContainer = document.getElementById("game-container"); // Define game container
 
 // paddles
@@ -149,7 +153,7 @@ function toggleDarkMode() { // To-Do: make this a toggle, add cookies to remembe
     document.getElementById("round_ball_button").style.animation = "1.2s dark_mode_change_buttons forwards";
     document.getElementById("square_ball_button").style.animation = "1.2s dark_mode_change_buttons forwards";
 
-    document.getElementById("round_ball_icon").style.animation = "1.2s dark_mode_ball_icons_change forwards";
+    document.getElementById("square_ball_icon").style.animation = "1.2s dark_mode_ball_icons_change forwards";
     document.getElementById("square_ball_icon").style.animation = "1.2s dark_mode_ball_icons_change forwards";
   }, 200);
 }
@@ -162,4 +166,8 @@ function roundBall() {
 function squareBall() {
   document.getElementById("ball").style.borderRadius = "";
   document.getElementById("ball").style.borderRadius = "0";
+}
+
+function loadingEnd() {
+  document.getElementById("loading_screen").style.animation = "0.5s loading_stop forwards";
 }

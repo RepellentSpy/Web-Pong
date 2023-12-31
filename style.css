@@ -221,3 +221,30 @@ body {
     background-color: black;
     margin: auto;
   }
+
+  #loading_screen {
+    background-color: white;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+  }
+
+  #loading_text {
+    font-family: "Roboto Mono", sans-serif;
+    margin-top: 50vh;
+    text-align: center;
+  }
+
+  #loading_animation {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    margin-top: 22rem;
+    margin-left: 47.8vw;
+  }
+
+  @keyframes loading_stop {
+    from {opacity: 1; scale: 1;}
+    to {opacity: 0; scale: 1.2;}
+  }
