@@ -40,8 +40,9 @@ body {
   
   /* Ball */
   #ball {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 999px;
     background-color: white;
     position: absolute;
     visibility: hidden;
@@ -133,6 +134,11 @@ body {
     to {background-color: #141414; color: white;}
   }
 
+  @keyframes dark_mode_ball_icons_change {
+    from {}
+    to {background-color: white}
+  }
+
   #score_player1 {
     color: white;
     font-family: "Silkscreen";
@@ -178,4 +184,40 @@ body {
     width: 1.2rem;
     margin-bottom: -0.2rem;
     margin-right: 0.5rem;
+  }
+
+  #ball_shape_title {
+    font-family: "Roboto Mono";
+    margin-left: 52rem;
+    position: absolute;
+  }
+
+  #round_ball_button {
+    margin-top: 3.5rem;
+    display: inline-block;
+    height: 4rem;
+    width: 5rem;
+    text-align: center;
+  }
+
+  #square_ball_button {
+    display: inline-block;
+    margin-left: 1rem;
+    height: 4rem;
+    width: 5rem;
+  }
+
+  #round_ball_icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 999px;
+    background-color: black;
+    margin: auto;
+  }
+
+  #square_ball_icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    background-color: black;
+    margin: auto;
   }
