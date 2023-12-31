@@ -153,21 +153,43 @@ function toggleDarkMode() { // To-Do: make this a toggle, add cookies to remembe
     document.getElementById("round_ball_button").style.animation = "1.2s dark_mode_change_buttons forwards";
     document.getElementById("square_ball_button").style.animation = "1.2s dark_mode_change_buttons forwards";
 
-    document.getElementById("square_ball_icon").style.animation = "1.2s dark_mode_ball_icons_change forwards";
+    document.getElementById("round_ball_icon").style.animation = "1.2s dark_mode_ball_icons_change forwards";
     document.getElementById("square_ball_icon").style.animation = "1.2s dark_mode_ball_icons_change forwards";
   }, 200);
 }
 
 function roundBall() {
+  ball_type = "round";
+  // Change highlighted button
+  document.getElementById("square_ball_button").style.borderWidth = "0px";
+  document.getElementById("square_ball_button").style.borderColor = "transparent";
+  
+  document.getElementById("round_ball_button").style.borderWidth = "2px";
+  document.getElementById("round_ball_button").style.borderColor = "black";
+
+  // Change ball
   document.getElementById("ball").style.borderRadius = "";
   document.getElementById("ball").style.borderRadius = "999px";
 }
 
 function squareBall() {
+  ball_type = "square";
+  // Change highlighted button
+  document.getElementById("round_ball_button").style.borderWidth = "0px";
+  document.getElementById("round_ball_button").style.borderColor = "transparent";
+  
+  document.getElementById("square_ball_button").style.borderWidth = "2px";
+  document.getElementById("square_ball_button").style.borderColor = "black";
+
+  // Change ball
   document.getElementById("ball").style.borderRadius = "";
   document.getElementById("ball").style.borderRadius = "0";
 }
 
 function loadingEnd() {
-  document.getElementById("loading_screen").style.animation = "0.5s loading_stop forwards";
+  loading_screen = document.getElementById("loading_screen");
+  loading_screen.style.animation = "0.5s loading_stop forwards";
+  setTimeout(() => {
+    loading_screen.remove();
+  }, 505);
 }

@@ -4,7 +4,8 @@
 
 body {
   user-select: none;
-  
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 #main_title {
@@ -169,7 +170,7 @@ body {
   #back_button {
     position: absolute;
     font-family: "Roboto Mono", sans-serif;
-    transform: translateY(30rem);
+    transform: translateY(22.5rem);
   }
 
   #dark_mode_button {
@@ -198,6 +199,8 @@ body {
     height: 4rem;
     width: 5rem;
     text-align: center;
+    border-width: 2px;
+    border-color: black;
   }
 
   #square_ball_button {
@@ -245,6 +248,6 @@ body {
   }
 
   @keyframes loading_stop {
-    from {opacity: 1; scale: 1;}
-    to {opacity: 0; scale: 1.2;}
+    from {opacity: 1;}
+    to {opacity: 0;}
   }
