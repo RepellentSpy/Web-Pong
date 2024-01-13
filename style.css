@@ -168,9 +168,12 @@ body {
   }
 
   #back_button {
-    position: absolute;
     font-family: "Roboto Mono", sans-serif;
-    transform: translateY(22.5rem);
+  }
+
+  #back_button_div {
+    position: absolute;
+    bottom: 0;
   }
 
   #dark_mode_button {
@@ -306,12 +309,5 @@ body {
     #mobile_error_icon {
       height: 3rem;
       width: 3rem;
-    }
-
-    #back_button_div {
-      display: flex;
-      justify-content: center;
-      margin-top: -32rem;
-      scale: 1.5;
     }
   }
