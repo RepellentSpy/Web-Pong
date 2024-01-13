@@ -271,3 +271,47 @@ body {
   input[type="range"]::-webkit-slider-thumb {
     scale: 0;
   }
+
+  #mobile_notice {
+    display: none;
+  }
+
+  #mobile_notice_icon {
+    display: none;
+  }
+
+  /* Mobile layout - mobile view not allowed */
+  @media only screen and (max-width: 1037px) {
+    #game-container, #main_title, button, h2, h1, #round_ball_button, #square_ball_button, h3, input {
+      display: none;
+    }
+
+    #mobile_notice {
+      display: flex;
+      justify-content: center;
+    }
+
+    #mobile_notice_icon {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    #mobile_notice_text {
+      text-align: center;
+      font-size: 2rem;
+      font-family: sans-serif;
+    }
+
+    #mobile_error_icon {
+      height: 3rem;
+      width: 3rem;
+    }
+
+    #back_button_div {
+      display: flex;
+      justify-content: center;
+      margin-top: -32rem;
+      scale: 1.5;
+    }
+  }
