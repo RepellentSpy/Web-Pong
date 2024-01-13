@@ -34,12 +34,12 @@ let score2 = 0;
 
 // Add event listeners to the paddles that allow the paddles to move with mouse
 paddle1.addEventListener("mousemove", (e) => {
-  paddle1Y = Math.min(e.clientY - paddle1.offsetHeight / 2, 500); // minimum makes sure the paddle doesn't leave the gamebox
+  paddle1Y = Math.min(e.clientY - paddle1.offsetHeight + 650 / 2, 500); // minimum makes sure the paddle doesn't leave the gamebox
   paddle1.style.top = paddle1Y + "px";
 });
 
 paddle2.addEventListener("mousemove", (e) => {
-  paddle2Y = Math.min(e.clientY - paddle2.offsetHeight / 2, 500);
+  paddle2Y = Math.min(e.clientY - paddle2.offsetHeight + 650 / 2, 500);
   paddle2.style.top = paddle2Y + "px";
 });
 
