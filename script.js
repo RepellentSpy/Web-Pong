@@ -190,6 +190,8 @@ function loadingEnd() {
   setTimeout(() => {
     loading_screen.remove();
   }, 505);
+
+  document.getElementById("game-container").style.animation = "1s game_container_appear forwards";
 }
 
 function speedInput() {

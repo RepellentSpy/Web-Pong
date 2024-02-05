@@ -22,6 +22,11 @@ body {
     position: relative;
     background-color: black;
   }
+
+  @keyframes game_container_appear {
+    from {scale: 0; filter: blur(10px);}
+    to {scale: 1; filter: blur(0px);}
+  }
   
   /* Paddles */
   #paddle1, #paddle2 {
@@ -140,6 +145,7 @@ body {
     to {background-color: white}
   }
 
+  
   #score_player1 {
     color: white;
     font-family: "Silkscreen";
