@@ -70,7 +70,6 @@ function gameLoop() {
   // Check if the ball has gone off the left or right side of the game container
   if (ballX < 0) {
     score2++; //add to player 2's score
-    document.getElementById("game-container").style.animation = "0.2s shake forwards" // box shakes
     setTimeout(() => {
       document.getElementById("game-container").style.animation = ""
     }, 210);
@@ -88,7 +87,6 @@ function gameLoop() {
 
   if (ballX > gameContainer.offsetWidth) {
     score1++;
-    document.getElementById("game-container").style.animation = "0.2s shake forwards" // box shakes
     setTimeout(() => {
       document.getElementById("game-container").style.animation = ""
     }, 210);

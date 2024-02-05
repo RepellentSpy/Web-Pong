@@ -125,11 +125,6 @@ body {
     to {width: 10px;}
   }
 
-  @keyframes shake {
-    from {scale: 1.0025;}
-    to {scale: 1;}
-  }
-
   @keyframes dark_mode_change {
     from {background-image: url(images/Blueprint_white.svg); color: black; background-color: white;}
     to {background-image: url(images/Blueprint_black.svg); color: white; background-color: black;}
