@@ -93,12 +93,12 @@ body {
   }
 
   @keyframes number_change_player2 {
-      from {opacity: 0; transform: translateY(396px);}
+      from {opacity: 0; transform: translateY(386px);}
       to {opacity: 1;}
   }
 
   @keyframes number_change_player1 {
-    from {opacity: 0; transform: translate(35px, 481px);}
+    from {opacity: 0; transform: translate(35px, 471px);}
     to {opacity: 1; transform: translate(35px, 493px);}
   }
 
