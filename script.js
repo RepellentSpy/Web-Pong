@@ -21,8 +21,8 @@ let ballX = gameContainer.offsetWidth / 2;
 let ballY = gameContainer.offsetHeight / 2;
 
 // Set the initial speed of the ball
-let ballSpeedX = 3;
-let ballSpeedY = 3;
+let ballSpeedX = 2;
+let ballSpeedY = 2;
 
 // Set the initial position of the paddles
 let paddle1Y = gameContainer.offsetHeight / 2 - paddle1.offsetHeight / 2;
